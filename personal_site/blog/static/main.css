@@ -1,0 +1,330 @@
+
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* ========== BASE LAYER ========== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #05070d;
+  color: #e6e6e6;
+  line-height: 1.6;
+
+  /* FIX: ensures content is above particles */
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== PARTICLES BACKGROUND ========== 
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* ALWAYS behind everything 
+  background: radial-gradient(circle at top, #0b1020, #05070d);
+  pointer-events: none; /* prevents blocking clicks 
+}  
+*/
+
+/* ========== FORCE CONTENT ABOVE PARTICLES ========== */
+
+
+/* ========== LINKS ========== */
+a {
+  color: #4cc9f0;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #90f1ff;
+}
+
+/* ========== HEADER ========== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  color: #b0d9ff;
+  font-size: 1.6rem;
+}
+
+nav a {
+  margin-left: 25px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8%;
+
+  /* safer background handling 
+  background: url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?fit=crop&w=1600&q=80")
+    center/cover no-repeat;*/
+
+  background: url("/static/images/Majestic fusion of eagle and owl.png") center/cover no-repeat;
+
+  color: black;
+}
+
+.hero h2 {
+  font-size: 3rem;
+}
+
+.hero p {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  max-width: 600px;
+}
+
+.home-btn {
+  display: inline-block;
+  margin: 20px 8%;
+  padding: 10px 18px;
+
+  background: rgba(76, 201, 240, 0.15);
+  border: 1px solid rgba(76, 201, 240, 0.4);
+
+  color: #4cc9f0;
+  text-decoration: none;
+  font-weight: 600;
+
+  border-radius: 8px;
+
+  transition: 0.3s ease;
+}
+
+.home-btn:hover {
+  background: #4cc9f0;
+  color: #05070d;
+  transform: translateY(-2px);
+}
+
+/* ========== SECTIONS ========== */
+section {
+  padding: 100px 8%;
+}
+
+/* ========== HERO ========== */
+
+
+
+
+section h3 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  border-left: 4px solid #4cc9f0;
+}
+
+/* ========== ABOUT ========== */
+.about p {
+  max-width: 750px;
+}
+
+/* ========== PROJECT GRID ========== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: rgba(20, 26, 40, 0.95);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(76, 201, 240, 0.15);
+  transition: 0.3s;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.35);
+}
+
+.project-card h4 {
+  margin-bottom: 12px;
+  color: #4cc9f0;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(76, 201, 240, 0.35);
+}
+
+/* ========== BLOG ========== */
+.blog {
+  padding: 100px 8%;
+  background: #05070d;
+}
+
+.blog-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #4cc9f0;
+}
+
+.blog-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+
+/* ===== BLOG IMAGE BACKGROUND (ADD THIS) ===== */
+.post {
+  position: relative;
+  overflow: hidden;
+  z-index: 0; /* IMPORTANT */
+}
+.post::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.22;
+  filter: blur(6px);
+
+  transform: scale(1.2);
+
+  z-index: 0;
+}
+
+.post::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 7, 13, 0.2),
+    rgba(5, 7, 13, 0.95)
+  );
+
+  z-index: 0;
+}
+
+.post * {
+  position: relative;
+  z-index: 1;
+}
+
+.post:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(76, 201, 240, 0.25);
+}
+
+.post:hover::before {
+  opacity: 0.35;
+  transform: scale(1.3);
+  transition: 0.4s ease;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 15px;
+  color: #4cc9f0;
+  font-weight: bold;
+}
+
+.post:hover .read-more {
+  color: #90f1ff;
+}
+
+.empty {
+  color: #888;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+/* Individual post images */
+.post-1::before {
+  background-image: url("/static/images/post1.jpg");
+}
+
+.post-2::before {
+  background-image: url("/static/images/post2.jpg");
+}
+
+
+/* ========== CONTACT ========== */
+.contact a {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #4cc9f0;
+  color: #05070d;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.contact a:hover {
+  background: #90f1ff;
+}
+
+/* ========== PROFILE IMAGE ========== */
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.profile-pic {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #4cc9f0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
+/* ========== FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #03040a;
+  color: #999;
+  border-top: 1px solid rgba(76, 201, 240, 0.2);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero {
+    padding-top: 80px;
+  }
+}

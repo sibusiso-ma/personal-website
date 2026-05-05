@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <title>Sibusiso Mathebula personal website</title>
+</head>
+
+<body>
+  
+<canvas id="particles"></canvas>
+
+<header>
+  <h1>Sibusiso Mathebula</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="{% url 'blog_list' %}" class="nav-blog-btn">
+      Blog
+    </a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>School of Visions</h2>
+  <p>Exploring the prophetic mysteries of God.</p>
+</section>
+
+<section id="about" class="about">
+  <h3>About Me</h3>
+  <div class="about-container">
+    <img src="{% static 'images/Sibusiso.JPG' %}" alt="Sibusiso Mathebula" class="profile-pic">
+
+    <p>
+        <h3>**About the Ministry**</h3>
+
+This ministry is a place of training, alignment, and spiritual awakening. It is committed to raising individuals who are rooted in truth, sharpened in discernment, and consistent in their walk with God.
+
+The focus is on building depth—moving beyond surface-level faith into understanding, discipline, and spiritual maturity. Through teaching, prayer, and prophetic insight, the ministry seeks to equip people to hear clearly, live intentionally, and walk in purpose.
+
+This is a call to growth, to transformation, and to a life that reflects both knowledge and power—where faith is not just spoken, but lived.
+
+    </p>
+  </div>
+</section>
+
+<section id="projects" class="projects">
+  <h3>Personal Projects</h3>
+
+  <div class="project-grid">
+    <div class="project-card">
+      <h4>COMING SOON</h4>
+      <p></p>
+      <a href="#"></a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG SECTION -->
+<section id="blog" class="blog">
+  <h1>My Blog</h1>
+
+  
+
+  <!-- BUTTON -->
+  <div style="text-align:center; margin-top:30px;">
+      <a href="{% url 'blog_list' %}" class="blog-btn">
+          View All Blogs
+      </a>
+  </div>
+
+</section>
+
+<section id="contact" class="contact">
+  <h3>Contact</h3>
+  <a href="mailto:sibusisomathebula0410@gmail.com">Email Me</a>
+</section>
+
+<footer>
+  &copy; 2025 Sibusiso Mathebula
+</footer>
+
+<script src="{% static 'main.js' %}"></script>
+
+</body>
+</html>

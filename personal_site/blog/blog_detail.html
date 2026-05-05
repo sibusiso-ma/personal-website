@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+
+<body>
+<section>
+    <div class="blog-detail">
+        <h1>{{ post.title }}</h1>
+
+        <p class="date">{{ post.created_at }}</p>
+        {% if post.image %}
+        <img src="{{ post.image.url }}" class="post-img">
+        {% endif %}
+
+        <div class="content">
+            {{ post.content|linebreaks }}
+        </div>
+
+        <a href="{% url 'blog_list' %}">← Back to Blogs</a>
+    </div>
+
+</section>
+</body>
+</html>
