@@ -1,4 +1,5 @@
-Django>=4.2,<5.0
+Python 3.11.x
+Django 4.2 LTS
 gunicorn
 whitenoise
 Pillow
